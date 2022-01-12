@@ -1,0 +1,110 @@
+@import "http://fonts.googleapis.com/css?family=Lato:100";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+body {
+    display:grid;
+    place-items: center;
+    margin: 0 auto;
+    min-block-size: 100vh;
+    background-color: rgb(3, 88, 49);
+}
+
+.loginFail {
+    display: none;
+    width: 50%;
+    padding:1rem;
+    border-radius: 0.4rem;
+    background-color: rgb(131, 3, 3);
+    color: white
+    /* margin-top: 10%; */
+  }
+  
+  #sign-in, #register {
+      inline-size: 50%;
+      max-inline-size: 23rem;
+      margin-inline: auto;
+  }
+  span {
+      color: white;
+      /* color: rgb(122, 120, 120); */
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 3px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin: 0 auto;
+  }
+  
+  form {
+      display: grid;
+      gap: 0.4rem;
+  }
+  #field {
+      display: flex;
+  }
+  
+  input{
+      border-radius: 0.35rem;
+      padding:1rem;
+      outline: 0;
+      border: 0;
+      transition: background-color 0.3s;
+      inline-size: 100%;
+      color: rgb(12, 12, 12);
+      vertical-align: middle;
+  }
+  input::placeholder{
+      vertical-align: middle;
+  }
+  input:not(input[type="submit"]){
+      /* background: #3b4148; */
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 0;
+  }
+
+  input[type="submit"] {
+      cursor: pointer;
+      background: rgb(139, 139, 139);
+      color: white;
+      font-weight: 800;
+      text-transform: Uppercase;
+      line-height: 1;
+  }
+  
+  input[type="submit"]:focus,
+  input[type="submit"]:hover{
+      background: rgb(26, 25, 25);;
+  }
+  
+  p{
+      margin-block: 1.5rem;
+      text-align: center;
+      color:white;
+  }
+  button {
+      background: transparent;
+      border: none;
+  }
+  
+  a {
+      cursor: pointer;
+      /* color: rgb(26, 25, 25); */
+      color:white;
+      /* outline: 0; */
+      text-decoration: none;
+      /* padding: 0 0.3rem; */
+  }
+  a:focus,
+  a.hover {
+      text-decoration: underline;
+  }
+  
+  #register {
+      display: none;
+  }
+  

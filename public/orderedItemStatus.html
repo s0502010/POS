@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="orderedItemStatus.css" />
+    <!-- <link rel="stylesheet" href="common.css"> -->
+  </head>
+  <body>
+
+      <header>
+        <div class="top-bar">
+          <div class="top"><a onclick="history.back()"><i class="fas fa-chevron-left"></i>Back</a></div>
+          <div class="top"><a href="memberProfile.html"><i class="far fa-user-circle profile"></i>Profile</a></div>
+          <div id="logout" class="top"><i class="fas fa-sign-out-alt"></i>Logout</div>
+        </div>
+      </header>
+
+    <main>
+    <h4 class="page-banner">Ordered Dishes</h4>
+    <div class="category-bar">
+      <h4 class="category1">Items</h4>
+      <h4 class="category2">Quantity</h4>
+      <h4 class="category3">Status</h4>
+    </div>
+
+    <div class="item-container">
+
+      <div class="appetizer-container" id="appetizer-container">
+        <h5 id="dish-type1" class="appetizer">Appetizer</h5>
+
+        <div class="appetizer-content-container">
+          <div id="ordered-appetizer-item" class="ordered-appetizer"></div>
+          <div id="ordered-appetizer-quantity" class="appetizer-quantity"></div>
+
+          <div class="appetizer-stepProgressBar">
+            <div class="appetizer-step1">
+              <div id="appetizer-processing" class="appetizer-processing"></div>
+            </div>
+            <div class="appetizer-step2">
+              <div class="appetizer-ready"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-dish-container" id="main-dish-container">
+        <h5 id="dish-type2" class="main-dish">Main Dish</h5>
+        <div class="main-dish-content-container">
+          <div id="ordered-main-dish-item" class="ordered-main-dish"></div>
+          <div id="ordered-main-dish-quantity" class="main-dish-quantity"></div>
+          <div class="main-dish-stepProgressBar">
+            <div class="main-dish-step1">
+              <div id="main-dish-processing" class="main-dish-processing"></div>
+            </div>
+            <div class="main-dish-step2">
+              <div class="main-dish-ready"> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-dish-container" id="side-dish-container">
+        <h5  id="dish-type3" class="side-dish">Side Dish</h5>
+        <div class="side-dish-content-container">
+          <div id="ordered-side-dish-item" class="ordered-side-dish"></div>
+          <div id="ordered-side-dish-quantity" class="side-dish-quantity"></div>
+
+          <div class="side-dish-stepProgressBar">
+            <div class="side-dish-step1">
+              <div id="side-dish-processing" class="side-dish-processing"></div>
+            </div>
+            <div class="side-dish-step2">
+              <div class="side-dish-ready"> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dessert-container" id="dessert-container">
+        <h5  id="dish-type4"  class="dessert">Dessert</h5>
+        <div class="dessert-content-container">
+          <div id="ordered-dessert-item" class="ordered-dessert"></div>
+          <div id="ordered-dessert-quantity" class="dessert-quantity"></div>
+
+          <div class="dessert-stepProgressBar">
+            <div class="dessert-step1">
+              <div id="dessert-processing" class="dessert-processing"></div>
+            </div>
+            <div class="dessert-step2">
+              <div class="dessert-ready"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="drink-container" id="drink-container">
+        <h5  id="dish-type5" class="drink">Drink</h5>
+        <div class="drink-content-container">
+          <div id="ordered-drink-item" class="ordered-drink"></div>
+          <div id="ordered-drink-quantity" class="drink-quantity"></div>
+
+          <div class="drink-stepProgressBar">
+            <div class="drink-step1">
+              <div id="drink-processing" class="drink-processing"></div>
+            </div>
+            <div class="drink-step2">
+              <div class="drink-ready"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <footer>
+    <div class="btm-container">
+        <div class="btm-nav"> 
+            <!-- <a href="#menu"><i class="fas fa-history"></i><br>我的歷史</a>  -->
+
+            <div class="select" id="shoppingCart"><a> <i class="fas fa-cart-plus"></i><br/>Cart<span></span></a></div>
+            <div class="select" id = "status"><a> <i class="fas fa-tasks"></i><br/>Order status</a></div>
+            <div class="select" id ="menu"><a><i class="fas fa-clipboard-list"></i><br/>Menu</a></div>
+
+        </div>
+    </div>
+</footer>
+  <script src="socket.io.js"></script>
+    <script src="orderedItemStatus.js"></script>
+    <script src="logoutAll.js"></script>
+    <!-- <script src="tablestatus.js"></script> -->
+  </body>
+</html>

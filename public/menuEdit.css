@@ -1,0 +1,87 @@
+.item-category-title {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 5px 80px 100% 5px;
+    height: 100%;
+    background-color: forestgreen;
+}
+
+
+/* .clock{
+} */
+
+.item-category div {
+    cursor: context-menu;
+    padding: 5px 100px 5px 5px;
+    /* background-color: ghostwhite; */
+}
+
+.item-category-adding div {
+    cursor: context-menu;
+    padding: 5px 100px 5px 5px;
+}
+
+
+/* make it change color */
+
+.item-category div:hover {
+    background-color: gold;
+}
+
+.context-menu {
+    cursor: context-menu;
+}
+
+.item-category-adding:hover {
+    background-color: gold;
+}
+
+.main {
+    display: flex;
+    position: relative;
+    top: 100px;
+    left: 350px;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Poppins", sans-serif
+}
+
+body {
+    font-size: 16px;
+}
+
+.w3-half img {
+    margin-bottom: -6px;
+    margin-top: 16px;
+    opacity: 0.8;
+    cursor: pointer
+}
+
+.w3-half img:hover {
+    opacity: 1
+}
+
+.a {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* justify-content: center; */
+}
+
+#item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fa-edit:hover {
+    background-color: rgb(134, 134, 134);
+}

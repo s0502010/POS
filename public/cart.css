@@ -1,0 +1,14 @@
+.h3{
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+
+    width:100%;
+  }
+
+  td {
+    border-collapse: separate;
+    width:calc(100%/3);
+  }

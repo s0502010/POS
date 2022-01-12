@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="genBox"></div>
+
+    <script>
+
+        const genBox = document.getElementById("genBox");
+
+        const data = [
+            {
+              foodName: "whatever",
+              types: "main dish",
+              price: 100,
+              status: "processing"
+            },
+            {
+              foodName: "whatever1",
+              types: "drinks",
+              price: 100,
+              status: "processing"
+            },
+            {
+              foodName: "whatever2",
+              types: "main dish",
+              price: 100,
+              status: "done"
+            },
+            {
+              foodName: "whatever3",
+              types: "drinks",
+              price: 100,
+              status: "processing"
+            },
+            {
+              foodName: "whatever4",
+              types: "dessert",
+              price: 100,
+              status: "done"
+            },
+            {
+              foodName: "whatever5",
+              types: "main dish",
+              price: 100,
+              status: "processing"
+            },
+            {
+              foodName: "whatever6",
+              types: "others",
+              price: 100,
+              status: "done"
+            },
+            {
+              foodName: "whatever15",
+              types: "main dish",
+              price: 100,
+              status: "processing"
+            },
+        ]
+
+        // // method 1 (just get the unique types of the array)
+        // let uniqueTypesArr = [...new Set(data.map(v => v.types))];
+        // console.log(uniqueTypesArr);
+
+        // //method 2 (intergrate all data to types and display in O(n) time)
+        // let separactedArr = new Map();
+
+        // for(let val of data){
+
+        //     console.log(val);
+
+        //     if( separactedArr.has( val.types ) ){
+        //         separactedArr.set( val.types, [...separactedArr.get(val.types), val] )
+        //     }
+
+        //     else{
+        //         separactedArr.set( val.types, [val] )
+        //     }
+        // }
+
+        // console.log(separactedArr);
+
+
+        // // gen box with innerhtml
+        // for(let val of [...separactedArr]){
+        //     genBox.innerHTML += `<h2>${val[0]}</h2> <hr>`
+
+        //     for(let item of val[1]){
+        //         genBox.innerHTML += `
+        //         <div style="display: flex; justify-content: space-between;">
+        //             <h4>${item.foodName}</h4>
+        //             <h4>${item.status}</h4>
+        //         </div>
+        //         `
+        //     }
+        // }
+
+
+        // // gen box with child
+        // genBox.innerHTML += `<hr><hr><hr><hr><hr>`
+        // for(let val of [...separactedArr]){
+
+        //     const tag = document.createElement("h2");
+        //     tag.appendChild( document.createTextNode(val[0]) ); 
+
+        //     genBox.appendChild(tag)
+        //     genBox.appendChild(document.createElement("hr"))
+
+        //     for(let item of val[1]){
+
+        //         const outerDiv = document.createElement("div");
+        //         outerDiv.setAttribute("style", "display: flex; justify-content: space-between;");
+
+        //         const leftFood = document.createElement("h4");
+        //         leftFood.appendChild( document.createTextNode(item.foodName) ); 
+
+        //         const rightStatus = document.createElement("h4");
+        //         rightStatus.appendChild( document.createTextNode(item.status) ) ; 
+
+        //         outerDiv.appendChild(leftFood);
+        //         outerDiv.appendChild(rightStatus);
+
+        //         genBox.appendChild(outerDiv);
+
+        //     }
+        // }
+
+
+    </script>
+    
+</body>
+</html>

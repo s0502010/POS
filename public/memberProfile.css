@@ -1,0 +1,113 @@
+/* html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 5.5rem;
+  scroll-behavior: smooth;
+} */
+
+header {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* position: fixed; */
+  top:0;
+  width:100%;
+  font-size: medium;
+  padding: 1rem 7%; 
+  align-items: center;
+  border-top:1px solid #ebecec; 
+  background-color: #eee
+  /* z-index: 1000; */
+  /* box-shadow: var(--box-shadow); */
+}
+
+header .icons i,
+header .icons a {
+  cursor: pointer;
+  margin-left: 0.5rem;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  width: 4.5rem;
+  text-align: center;
+  font-size: 1.7rem;
+  color: var(--black);
+  border-radius: 50%;
+  background: #eee;
+}
+
+header .icons i:hover,
+header .icons a:hover{
+    color:#fff;
+    background: var(--green);
+    transform: rotate(360deg);
+}
+
+header .icons #menu-bars{
+    display: none;
+}
+
+
+.header {
+  font-size: 1.2rem;
+  color: white;
+  background: rgb(145, 144, 144);
+  padding: 0.8rem;
+}
+
+.user-name-container{
+  width: 100%;
+}
+
+.user-name-title {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-color: rgb(14, 71, 3);
+  color: white;
+  font-size: medium;
+}
+.mobile-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(14, 71, 3);
+  color: white;
+  font-size: medium;
+}
+.email-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(14, 71, 3);
+  color: white;
+  font-size: medium;
+}
+.birthday-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(14, 71, 3);
+  color: white;
+  font-size: medium;
+}
+.gender-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(14, 71, 3);
+  color: white;
+  font-size: medium;
+}
+.user-name, .mobile, .birthday, .email, .gender {
+  margin-left: 20px;
+
+}
+
+.btm-nav {
+  font-size: small;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  padding: 1%;
+  border-top:1px solid #ebecec; 
+  background-color: #eee
+}

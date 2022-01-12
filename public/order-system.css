@@ -1,0 +1,20 @@
+li{
+    margin: 10px;
+}
+#orderlist{
+    overflow-y: auto;
+    height: 40vh;
+}
+#ordereditem{
+    overflow-y: auto;
+    height: 30vh;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: green;
+}
+.btn-primary {
+    color: #fff;
+    background-color: green;
+    border-color: black;
+}

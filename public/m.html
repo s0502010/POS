@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+      }
+
+      nav {
+        background-color: red;
+      }
+
+      main {
+        background-color: sandybrown;
+      }
+
+      nav .category-item {
+        display: flex;
+      }
+
+      nav .category-name {
+        width: 5em;
+      }
+
+      .menu-item {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      main .category-item {
+        margin-bottom: 4em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- left -->
+      <nav>
+        <h2>Category</h2>
+
+        <div class="category-list">
+
+          <div class="category-item">
+            <div class="category-name">main</div>
+            <div class="edit-button">edit</div>
+          </div>
+
+        </div>
+
+        <div class="insert-button">+ Insert Category</div>
+      </nav>
+
+      <!-- right -->
+      <main>
+        
+        <h1>Name of Category</h1>
+
+        <!-- menu of right title -->
+        <div class="category-list">
+
+          <div class="category-item">
+            <div class="category-name">main</div>
+            <hr />
+
+            <!-- menu of right -->
+            <div class="menu-list">
+              <div class="menu-item">
+                <div class="menu-name">pizza</div>
+                <div>$<span class="menu-price">80</span></div>
+                <div class="edit-button">edit</div>
+              </div>
+            </div>
+
+            <div class="insert-button">
+              Insert
+              <span class="category-name">main</span>
+            </div>
+            
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      async function loadMenu() {
+        let res = await fetch("/Menu/All");
+        let list = await res.json();
+
+        let navCategoryList = document.querySelector("nav .category-list");
+        let navCategoryItemTemplate =
+          navCategoryList.querySelector(".category-item");
+        navCategoryItemTemplate.remove();
+
+        let insertCategoryButton = document.querySelector("nav .insert-button");
+
+        let mainCategoryList = document.querySelector("main .category-list");
+        let mainCategoryItemTemplate =
+          mainCategoryList.querySelector(".category-item");
+        mainCategoryItemTemplate.remove();
+
+        insertCategoryButton.addEventListener("click", () => {
+          let type = "new xxxx <b>o</b>";
+          let id = 123;
+          let item = {
+            category: { id, type },
+            menuList: [],
+          };
+          addItem(item);
+        });
+
+        function addItem(item) {
+          let { category } = item;
+
+          // left menu
+          let navCategoryItem = navCategoryItemTemplate.cloneNode(true);
+          let navCategoryName = navCategoryItem.querySelector(".category-name");
+          navCategoryName.textContent = category.type;
+          navCategoryItem
+            .querySelector(".edit-button")
+            .addEventListener("click", async () => {
+              console.log("edit", category.type);
+              let sweetAlertResult = await Swal.fire({
+                title: "Rename Category",
+                html: `
+                  <label>Rename ${category.type} to:</label>
+                  <input id="new-category-name" class="swal2-input">
+                  `,
+                showCancelButton: true,
+                confirmButtonText: "Confirm",
+                showDenyButton: true,
+                denyButtonText: `Delete`,
+              });
+
+              if (!sweetAlertResult.isConfirmed) return;
+              let newCategoryName =
+                document.querySelector("#new-category-name").value;
+              if (!newCategoryName) return;
+
+              await fetch("/xxx");
+
+              Swal.fire("Save!", "Your file has been saved.", "success");
+
+              console.log(newCategoryName);
+              navCategoryName.textContent = newCategoryName;
+              mainCategoryItem
+                .querySelectorAll(".category-name")
+                .forEach((categoryName) => {
+                  categoryName.textContent = newCategoryName;
+                });
+            });
+          navCategoryList.appendChild(navCategoryItem);
+
+          // right content
+          let mainCategoryItem = mainCategoryItemTemplate.cloneNode(true);
+          mainCategoryItem
+            .querySelectorAll(".category-name")
+            .forEach((categoryName) => {
+              categoryName.textContent = category.type;
+            });
+          let menuList = mainCategoryItem.querySelector(".menu-list");
+          let menuItemTemplate = menuList.querySelector(".menu-item");
+          menuItemTemplate.remove();
+          for (let menu of item.menuList) {
+            let menuItem = menuItemTemplate.cloneNode(true);
+            menuItem.querySelector(".menu-name").textContent = menu.name;
+            menuItem.querySelector(".menu-price").textContent = menu.price;
+            menuItem
+              .querySelector(".edit-button")
+              .addEventListener("click", () => {
+                console.log("edit", menu.name);
+              });
+            menuList.appendChild(menuItem);
+          }
+          mainCategoryList.appendChild(mainCategoryItem);
+        }
+
+        for (let item of list) {
+          addItem(item);
+        }
+      }
+      loadMenu();
+
+    </script>
+  </body>
+</html>

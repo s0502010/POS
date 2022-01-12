@@ -1,0 +1,16 @@
+.card{
+    width: 200px;
+    height:200px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.nav-pill .nav-link{
+    width: 150px;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: green;
+}

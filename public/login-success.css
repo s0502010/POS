@@ -1,0 +1,74 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* background-image: url("/imageFolder/pizzaFront.jpeg"); */
+  background: linear-gradient(rgba(5, 5, 5, 0.671), rgba(0, 0, 0, 0.808)),
+    url("/public/image-folder/frontpage.jpeg");
+
+  height: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+:root {
+  font-size: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.left {
+  height: 400px;
+  color: white;
+  text-align: center;
+}
+.left,
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .left .copy {
+  color: white;
+  text-align: center;
+} */
+/* .container{
+    width: 100%;
+    height: 100vh;
+    font-family: sans-serif;
+    background: rgb(207, 250, 253);
+    color: #fff;
+} */
+
+.button-control {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  /* letter-spacing: 0.5px; */
+  /* border: 2.5px solid rgba(255, 255, 255 .5); */
+  border-radius: 2.5rem;
+  border: 3px solid white;
+  color: white;
+}
