@@ -3,7 +3,7 @@ import { client } from "./db";
 
 export const profileRoutes = express.Router();
 
-profileRoutes.get('/customerInfo', async (req,res) =>{
+profileRoutes.get("/customerInfo", async (req,res) =>{
     // res.json(req.session['user_id']);
     console.log("the user id",req.session['user_id'])
     try {

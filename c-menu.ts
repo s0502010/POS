@@ -14,7 +14,7 @@ const cmenuRoute = express.Router();
 //read .env and connect to database
 dotenv.config();
 
-cmenuRoute.get('/c-menu', async (req, res) => {
+cmenuRoute.get("/c-menu", async (req, res) => {
     try {
         let result = await client.query('SELECT * from menu_type')
         let list = result.rows
@@ -49,13 +49,13 @@ cmenuRoute.get('/c-menu', async (req, res) => {
     }
 })
 
-cmenuRoute.get('/getcmenuType', async (req, res) => {
+cmenuRoute.get("/getcmenuType", async (req, res) => {
     const cmenuType = await client.query('SELECT * from menu_type')
     res.json(cmenuType.rows)
     // console.log(cmenuType.rows)
 })
 
-cmenuRoute.get('/getcmenuItem', async (req, res) => {
+cmenuRoute.get("/getcmenuItem", async (req, res) => {
     const cmenuItem = await client.query('SELECT * from menu')
     res.json(cmenuItem)
     // console.log(cmenuItem.rows)

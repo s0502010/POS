@@ -30,7 +30,7 @@ dotenv.config();
 
 // client.connect()
 
-menuEditRoute.post('/itemSubmitInMenu', upload.single('image'), async (req, res) => {
+menuEditRoute.post("/itemSubmitInMenu", upload.single('image'), async (req, res) => {
     await client.query(/*sql*/`insert into menu (name,description,type,status,price,image) Values ($1,$2,$3,$4,$5,$6)`,
         [req.body.itemName, req.body.itemDescription, req.body.itemType, req.body.itemStatus, req.body.itemPrice, req.file?.filename])
         const menuItem = await client.query('select * from menu order by id asc')
@@ -42,17 +42,17 @@ menuEditRoute.post("/typeSubmitInCategory", async (req, res) => {
     
 })
 
-menuEditRoute.get('/Menu/Type', async (req, res) => {
+menuEditRoute.get("/Menu/Type", async (req, res) => {
     const menuType = await client.query('select * from menu_type order by id asc')
     res.json(menuType.rows)
 })
 
-menuEditRoute.get('/Menu/Item', async (req, res) => {
+menuEditRoute.get("/Menu/Item", async (req, res) => {
     const menuItem = await client.query('select * from menu order by id asc')
     res.json(menuItem.rows)
 })
 
-menuEditRoute.get('/Menu/All', async (req, res) => {
+menuEditRoute.get("/Menu/All", async (req, res) => {
     type Category = {
         id: number
         type: string

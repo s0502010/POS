@@ -15,7 +15,7 @@ dotenv.config();
 // });
 // client.connect()
 
-kitchenRoute.get('/getOrderFood', async (req, res) => {
+kitchenRoute.get("/getOrderFood", async (req, res) => {
     const cooking = await client.query(`select * from order_item WHERE status = 'cooking'`)
     const co = cooking.rows
     res.json(co)
@@ -23,7 +23,7 @@ kitchenRoute.get('/getOrderFood', async (req, res) => {
     
     // console.log(co)
 })
-kitchenRoute.get('/getcompleteFood', async (req, res) => {
+kitchenRoute.get("/getcompleteFood", async (req, res) => {
     const cooking = await client.query(`select * from order_item WHERE status = 'complete'`) 
     const co = cooking.rows
     res.json(co)
@@ -31,7 +31,7 @@ kitchenRoute.get('/getcompleteFood', async (req, res) => {
 })
 
 
-kitchenRoute.post('/finshFood', async (req, res) => {
+kitchenRoute.post("/finshFood", async (req, res) => {
     await client.query(`update order_item set status = $1 where id = $2`, [req.body.status, req.body.foodId])
 
 

@@ -12,13 +12,13 @@ dotenv.config();
 // });
 // client.connect()
 
-menuOrderRoute.get('/getMenuType', async (req, res) => {
+menuOrderRoute.get("/getMenuType", async (req, res) => {
     const menuType = await client.query('select * from menu_type')
     res.json(menuType)
     // console.log(menuItem.rows)
 })
 
-menuOrderRoute.get('/getMenuItem', async (req, res) => {
+menuOrderRoute.get("/getMenuItem", async (req, res) => {
     const menuItem = await client.query('select * from menu')
     res.json(menuItem)
     // console.log(menuItem.rows)
@@ -43,7 +43,7 @@ menuOrderRoute.post("/reciveOrderList", async (req, res) => {
 
 });
 
-menuOrderRoute.post('/getOrderItem', async(req, res) => {
+menuOrderRoute.post("/getOrderItem", async(req, res) => {
     // console.log(req.body.tableName)
     const menuType = await client.query(`select * from order_item where table_name = $1 AND (status = 'cooking' OR status = 'complete') order by id asc`, [req.body.tableName])
 

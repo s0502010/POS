@@ -12,7 +12,7 @@ dotenv.config();
 // });
 // client.connect()
 
-previewRoute.get('/revenueReview', async(req, res) => {
+previewRoute.get("/revenueReview", async(req, res) => {
     const  revenue= await client.query('select food_name, sum(quantity), sum(price * quantity) num from order_item GROUP BY food_name')
     res.json(revenue.rows)
 })

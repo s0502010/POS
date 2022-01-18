@@ -7,7 +7,7 @@ export const confirmOrderRoute = express.Router();
 
 
 
-confirmOrderRoute.post('/submitOrder', async (req, res)=>{
+confirmOrderRoute.post("/submitOrder", async (req, res)=>{
     let data = req.body
 
     // if(data[0]==undefined){

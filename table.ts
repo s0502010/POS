@@ -19,7 +19,7 @@ dotenv.config();
 // });
 // client.connect()
 
-seatRoute.get('/getSeat', async(req, res) => {
+seatRoute.get("/getSeat", async(req, res) => {
     const menuType = await client.query('select * from seats order by id asc')
     res.json(menuType)
 })
