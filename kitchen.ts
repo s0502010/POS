@@ -2,7 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv';
 import {client} from "./db";
 import { io } from './server';
-import { loginOnly } from './guard';
+//import { loginOnly } from './guard';
 // import { io } from './server';
 
 const kitchenRoute = express.Router()
@@ -31,7 +31,7 @@ kitchenRoute.get('/getcompleteFood', async (req, res) => {
 })
 
 
-kitchenRoute.post('/finshFood',loginOnly, async (req, res) => {
+kitchenRoute.post('/finshFood', async (req, res) => {
     await client.query(`update order_item set status = $1 where id = $2`, [req.body.status, req.body.foodId])
 
 
