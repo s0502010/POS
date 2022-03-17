@@ -24,7 +24,7 @@ confirmOrderRoute.post("/submitOrder", async (req, res)=>{
 
     const ids = [];
     for (let val of data){
-        const res = await client.query(/*sql*/`INSERT INTO order_item (table_name, food_name, description, price, quantity, type, status) Values($1,$2,$3,$4,$5,$6,$7) returning id`,
+        const res = await client.query(/*sql*/`INSERT INTO order_item (seat_id, food_name, description, price, quantity, type, status) Values($1,$2,$3,$4,$5,$6,$7) returning id`,
         [val.tableNO, val.name, ,val.price, val.numberOfItm, val.type, val.status]
         );
         ids.push(res.rows[0].id);
